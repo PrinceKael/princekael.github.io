@@ -7,7 +7,7 @@
 <meta name="description" content="Your trusted source for tech and media.">
 		
 <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/montserrat" type="text/css"/>
-<link rel="stylesheet" href="style.css">		
+<link rel="stylesheet" href="table.css">		
 </head>
 	
 <body>
