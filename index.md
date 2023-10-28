@@ -62,5 +62,5 @@
 	  <p>Copyright © 2019 by Stratos Panagiotidis. All rights reserved.
 </footer>
 </body>
-	
+<script src="dropdown.js"></script>
 </html>
