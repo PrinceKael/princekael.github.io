@@ -1,66 +1,137 @@
-<html lang="en-AU">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8">
-<title>Libreledger | Homepage</title>
-		
-<meta name="author" content="Stratos Panagiotidis">
-<meta name="description" content="Your trusted source for tech and media.">
-		
-<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/montserrat" type="text/css"/>
-<link rel="stylesheet" href="table.css">		
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+}
+
+#myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+</style>
 </head>
-	
-<body>
-<header>
-<h1>Libreledger</h1>
-</header>
-		
-<nav>
-	<ul>
-	<li><a href="#">Home</a></li>
-	<li><a href="#">About Us</a></li>
-	<li><a href="#">Contact Us</a></li>
-	<li><a href="#">Privacy Policy</a></li>
-	</ul>
-			
-<form>
-	<input type="search" name="q" placeholder="Search query">
-	<input type="submit" value="Go!">
-</form>
-</nav>
-		
-<main>
-	<article>
-		<h2>Article heading</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-		<h3>Subsection</h3>
-    		<div class="dropdown">
-			<button class="dropbtn">Dropdown</button>
-			<div class="dropdown-content">
-				<a href="#">Link 1</a>
-				<a href="#">Link 2</a>
-				<a href="#">Link 3</a>
-			</div>
-		</div> 
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-			<h3>Another Subsection</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-			</article>
-			
-<aside>
-	<h2>Related</h2>
-	<ul>
-	<li><a href="#">Example of related entry.</a></li>
-	</ul>
-</aside>
-   
-			
-</main>
-		
-		
-  <footer>
-	  <p>Copyright © 2019 by Stratos Panagiotidis. All rights reserved.
-</footer>
+<body style="background-color:white;">
+
+<div class="navbar">
+  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+  <a href="#home">Home</a>
+  <a href="#news">News</a>
+  <div class="dropdown">
+  <button class="dropbtn" onclick="myFunction()">Dropdown
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+  </div> 
+</div>
+
+<h3>Dropdown Menu inside a Navigation Bar</h3>
+<p>Click on the "Dropdown" link to see the dropdown menu.</p>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
 </body>
-<script src="dropdown.js"></script>
 </html>
