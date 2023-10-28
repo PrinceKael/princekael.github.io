@@ -35,6 +35,14 @@
 				<h2>Article heading</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 				<h3>Subsection</h3>
+    				 <div class="dropdown">
+				  <button class="dropbtn">Dropdown</button>
+ 				 <div class="dropdown-content">
+				    <a href="#">Link 1</a>
+ 				   <a href="#">Link 2</a>
+ 				   <a href="#">Link 3</a>
+				  </div>
+				</div> 
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 				<h3>Another Subsection</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -46,6 +54,7 @@
 					<li><a href="#">Example of related entry.</a></li>
 				</ul>
 			</aside>
+   
 			
 		</main>
 		
