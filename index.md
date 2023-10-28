@@ -2,8 +2,20 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+}
+
 .navbar {
   overflow: hidden;
   background-color: #333;
@@ -17,15 +29,10 @@
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
 
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
 
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #3e8e41;
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: red;
 }
 
 #myInput {
@@ -46,69 +53,48 @@
   display: inline-block;
 }
 
-.dropdown .dropbtn {
-  cursor: pointer;
-  font-size: 16px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-  background-color: red;
-}
-
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
   z-index: 1;
 }
 
 .dropdown-content a {
-  float: none;
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  text-align: left;
 }
 
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
+.dropdown a:hover {background-color: #ddd;}
 
-.show {
-  display: block;
-}
+.show {display: block;}
 </style>
 </head>
 <body style="background-color:white;">
 
-<div class="navbar">
-  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+<h2>Search/Filter Dropdown</h2>
+<p>Click on the button to open the dropdown menu, and use the input field to search for a specific dropdown link.</p>
+
+<div class="dropdown">
   <a href="#home">Home</a>
   <a href="#news">News</a>
-  <div class="dropdown">
-  <button class="dropbtn" onclick="myFunction()">Dropdown
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-content" id="myDropdown">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+    <a href="#about">About</a>
+    <a href="#base">Base</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+    <a href="#custom">Custom</a>
+    <a href="#support">Support</a>
+    <a href="#tools">Tools</a>
   </div>
-  </div> 
 </div>
-
-<h3>Dropdown Menu inside a Navigation Bar</h3>
-<p>Click on the "Dropdown" link to see the dropdown menu.</p>
 
 <script>
 /* When the user clicks on the button,
@@ -133,5 +119,7 @@ function filterFunction() {
   }
 }
 </script>
+
 </body>
 </html>
+
